@@ -1,0 +1,9 @@
+let config = {
+
+    connection: {
+        ip: "127.0.0.1",
+        community: "public",
+    }
+
+}
+module.exports = config;
