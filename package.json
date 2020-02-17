@@ -17,8 +17,11 @@
   },
   "homepage": "https://github.com/owenflaherty/SharpSNMP#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-rate-limit": "^5.1.1",
-    "net-snmp": "^2.5.2"
+    "moment": "^2.24.0",
+    "net-snmp": "^2.5.2",
+    "nodemailer": "^6.4.2"
   }
 }
