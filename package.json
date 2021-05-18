@@ -22,6 +22,6 @@
     "express-rate-limit": "^5.1.1",
     "moment": "^2.24.0",
     "net-snmp": "^2.5.2",
-    "nodemailer": "^6.4.2"
+    "nodemailer": ">=6.4.16"
   }
 }
