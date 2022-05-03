@@ -2,13 +2,14 @@ import bp from 'body-parser'
 import express from 'express'
 import fs from 'fs'
 import helmet from 'helmet'
+import yaml, { JSON_SCHEMA } from 'js-yaml'
 import cache, { CacheClass } from 'memory-cache'
 import snmp from 'net-snmp'
 import { ILogObject, Logger } from 'tslog'
 
 const packageData = require('../package.json')
 
-const log: Logger = new Logger();
+const log: Logger = new Logger({ minLevel: 'info' });
 {
     log.silly('Logger instantiated')
     const logToTransport = (logObject: ILogObject) => {
@@ -22,7 +23,7 @@ const log: Logger = new Logger();
         warn: logToTransport,
         error: logToTransport,
         fatal: logToTransport
-    }, "debug")
+    }, "debug")    
     log.info(`Logger attached to file: '${'jci.log'}'`)
 }
 log.info('Logging initialized')
@@ -52,9 +53,9 @@ export interface WebSNMPConfig {
         }
     }
 }
-let config_file = './config/config.json'
+let config_file = './config/config.yaml'
 let config_data = fs.readFileSync(config_file).toString('utf-8')
-const config: WebSNMPConfig = JSON.parse(config_data)
+const config: WebSNMPConfig = yaml.load(config_data, { schema: JSON_SCHEMA }) as WebSNMPConfig
 log.info(`Loaded config from '${config_file}'`)
 
 const memCache: CacheClass<string, number> = new cache.Cache()

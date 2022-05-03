@@ -1,0 +1,35 @@
+---
+server:
+  listen_ip: 0.0.0.0                                       # The IP that the webserver will listen on (NYI)
+  listen_port: 1234                                        # The port that the webserver will listen on
+  access_key:                                              # An array of authorized keys that can access the API
+    - 7E6800CF572AD8518609D42C70628066
+    - 18942E4AA3031C15BD9E897308F8B2D2
+  interval: 10                                             # The interval (in seconds) between SMTP collections
+
+snmp:                                                      # This block contains host/oid definitions
+  Main Printer:                                            # This is the "pretty" name for the host
+    host: 10.1.0.10                                        # DNS name / IP of the host
+    port: 161                                              # SNMP port of the host
+    version: v3                                            # SNMP Version to use (v1, v2c, v3)
+    community: myROcommunity                               # SNMP v1/v2c community name (not needed for v3)
+    username: snmp_username                                # SNMP v3 username
+    auth_method: SHA1                                      # SNMP v3 authentication method (None, MD5, SHA1)
+    auth_key: snmp_auth_key                                # SNMP v3 authentication password/key
+    privacy_method: AES128                                 # SNMP v3 encryption method (None, DES56, AES128, AES192, AES256)
+    privacy_key: snmp_priv_key                             # SNMP v3 encryption password/key
+    oids:                                                  # A list of OIDs to check with the format:
+      toner_cyan: 1.3.6.1.2.1.43.11.1.1.9.1.1              #     friendly_name: OID
+      toner_magenta: 1.3.6.1.2.1.43.11.1.1.9.1.2           # The examples to the left show the OIDs to grab the lifetime
+      toner_yellow: 1.3.6.1.2.1.43.11.1.1.9.1.3            # or capacity of various consumables.
+      toner_black: 1.3.6.1.2.1.43.11.1.1.9.1.4
+      waste_toner_bin: 1.3.6.1.2.1.43.11.1.1.9.1.5
+      photodrum_cyan: 1.3.6.1.2.1.43.11.1.1.9.1.6
+      photodrum_magenta: 1.3.6.1.2.1.43.11.1.1.9.1.7
+      photodrum_yellow: 1.3.6.1.2.1.43.11.1.1.9.1.8
+      photodrum_black: 1.3.6.1.2.1.43.11.1.1.9.1.9
+      developer_cyan: 1.3.6.1.2.1.43.11.1.1.9.1.10
+      developer_magenta: 1.3.6.1.2.1.43.11.1.1.9.1.11
+      developer_yellow: 1.3.6.1.2.1.43.11.1.1.9.1.12
+      developer_black: 1.3.6.1.2.1.43.11.1.1.9.1.13
+      fuser_life: 1.3.6.1.2.1.43.11.1.1.9.1.14

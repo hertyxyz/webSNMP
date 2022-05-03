@@ -9,26 +9,30 @@
   </a>
 </p>
 
-> Simple API to expose info on consumables from Sharp MFPs
+> Simple API to poll SNMP-compatable devices and 
 
 ### 🏠 [Homepage](https://github.com/hertyxyz/webSNMP#readme)
 
 This project has been overhauled! It is no longer a standalone API for polling only Sharp printers, but a full-blown framework for polling any SNMP-enabled device and exposing the data over an HTTP interface.
 
-The config file is fairly self-explanatory, but I'll make some documentation when I get the chance :)
+You will need to configure webSNMP before it does anything useful. This is done with the `config.yaml` file in the config directory. webSNMP is fairly simple to configure by following the documentation in the sample file's comments.
 
 ## Install
 
 ```sh
 pnpm i
 cd config
-cp config.sample.json config.json
+cp config.sample.yaml config.yaml
 ```
 
 ## Usage
 
 ```sh
 pnpm run dev
+-- or --
+npm run dev
+-- or --
+yarn dev
 ```
 
 ## Author
