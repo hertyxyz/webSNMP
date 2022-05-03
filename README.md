@@ -1,28 +1,34 @@
-<h1 align="center">Welcome to SharpSNMP 👋</h1>
+<h1 align="center">Welcome to webSNMP 👋</h1>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000" />
-  <a href="https://github.com/owenflaherty/SharpSNMP#readme" target="_blank">
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.2-blue.svg?cacheSeconds=2592000" />
+  <a href="https://github.com/hertyxyz/webSNMP#readme" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
-  <a href="https://github.com/owenflaherty/SharpSNMP/graphs/commit-activity" target="_blank">
+  <a href="https://github.com/hertyxyz/webSNMP/graphs/commit-activity" target="_blank">
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
   </a>
 </p>
 
 > Simple API to expose info on consumables from Sharp MFPs
 
-### 🏠 [Homepage](https://github.com/owenflaherty/SharpSNMP#readme)
+### 🏠 [Homepage](https://github.com/hertyxyz/webSNMP#readme)
+
+This project has been overhauled! It is no longer a standalone API for polling only Sharp printers, but a full-blown framework for polling any SNMP-enabled device and exposing the data over an HTTP interface.
+
+The config file is fairly self-explanatory, but I'll make some documentation when I get the chance :)
 
 ## Install
 
 ```sh
-npm install
+pnpm i
+cd config
+cp config.sample.json config.json
 ```
 
 ## Usage
 
 ```sh
-npm run server.js
+pnpm run dev
 ```
 
 ## Author
@@ -34,7 +40,7 @@ npm run server.js
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/owenflaherty/SharpSNMP/issues).
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/hertyxyz/webSNMP/issues).
 
 ## Show your support
 

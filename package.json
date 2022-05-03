@@ -1,27 +1,29 @@
 {
-  "name": "sharpsnmp",
-  "version": "0.0.1",
-  "description": "Simple API to expose info on consumables from Sharp MFPs",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/owenflaherty/SharpSNMP.git"
-  },
-  "author": "Owen Flaherty",
-  "license": "UNLICENSED",
-  "bugs": {
-    "url": "https://github.com/owenflaherty/SharpSNMP/issues"
-  },
-  "homepage": "https://github.com/owenflaherty/SharpSNMP#readme",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "express-rate-limit": "^5.1.1",
-    "moment": "^2.24.0",
-    "net-snmp": "^2.5.2",
-    "nodemailer": ">=6.4.16"
-  }
+	"name": "webSNMP",
+	"version": "1.0.2",
+	"description": "A simple server that collects SNMP data and serves it via HTTP",
+	"scripts": {
+		"dev": "tsc-watch --noClear --onSuccess \"node ./dist/index.js\""
+	},
+	"devDependencies": {
+		"@types/express": "^4.17.13",
+		"@types/memory-cache": "^0.2.2",
+		"nodemon": "^2.0.16",
+		"tsc-watch": "^5.0.3",
+		"typescript": "^4.6.4"
+	},
+	"dependencies": {
+		"@app-config/main": "2",
+		"body-parser": "^1.20.0",
+		"configstore-ts": "^0.0.2",
+		"express": "^4.18.1",
+		"helmet": "^5.0.2",
+		"memory-cache": "^0.2.0",
+		"net-snmp": "^3.6.3",
+		"tslog": "^3.3.3"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/hertyxyz/webSNMP"
+	}
 }
